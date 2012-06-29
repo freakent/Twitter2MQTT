@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project Twitter Analysis with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/Users/martin/Desktop/Twitter2MQTT.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="freakent.twitter.Twitter2MQTT"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ twitter4j-core-2.2.5.jar twitter4j-stream-2.2.5.jar org.eclipse.paho.client.mqttv3.jar commons-configuration-1.8.jar commons-beanutils-1.8.3.jar commons-logging-1.1.1.jar commons-lang3-3.1.jar commons-lang-2.6.jar"/>
+            </manifest>
+            <zipfileset src="lib/jar-in-jar-loader.zip"/>
+            <fileset dir="bin"/>
+            <zipfileset dir="lib/twitter4j-2.2.5/lib" includes="twitter4j-core-2.2.5.jar"/>
+            <zipfileset dir="lib/twitter4j-2.2.5/lib" includes="twitter4j-stream-2.2.5.jar"/>
+            <fileset dir="conf">
+            	<exclude name="Twitter2MQTT.properties"/>
+            </fileset>
+            <zipfileset dir="lib" includes="org.eclipse.paho.client.mqttv3.jar"/>
+            <zipfileset dir="lib/commons-configuration-1.8" includes="commons-configuration-1.8.jar"/>
+            <zipfileset dir="lib/commons-beanutils-1.8.3" includes="commons-beanutils-1.8.3.jar"/>
+            <zipfileset dir="lib/commons-logging-1.1.1" includes="commons-logging-1.1.1.jar"/>
+            <zipfileset dir="lib/commons-lang3-3.1" includes="commons-lang3-3.1.jar"/>
+            <zipfileset dir="lib/commons-lang-2.6" includes="commons-lang-2.6.jar"/>
+        </jar>
+    </target>
+</project>
