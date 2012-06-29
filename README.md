@@ -24,7 +24,7 @@ twitter.debug
 -------------
 Either yes or no
 
-twitter.oath.*
+twitter.oauth.*
 --------------
 Register your application at http://dev.twitter.com to obtain these values. 
 More information available here: http://twitter4j.org/en/configuration.html
